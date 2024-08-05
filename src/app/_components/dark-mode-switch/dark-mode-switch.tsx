@@ -1,34 +1,40 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
 import { Switch } from "@nextui-org/switch";
 import { MoonIcon } from "./MoonIcon";
 import { SunIcon } from "./SunIcon";
 
-export default function App() {
+export function DarkModeSwitch() {
   // State to manage theme
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   // Update theme when isDarkMode changes
   useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.setAttribute("data-theme", "dark");
+    const storedTheme = localStorage.getItem("theme");
+
+    // Check localStorage for saved theme preference
+    if (storedTheme) {
+      setIsDarkMode(storedTheme === "dark");
+      document.documentElement.setAttribute("data-theme", storedTheme);
     } else {
-      document.documentElement.removeAttribute("data-theme");
+      document.documentElement.setAttribute("data-theme", "light");
     }
-  }, [isDarkMode]);
+  }, []);
 
   // Toggle theme function
   const toggleTheme = () => {
-    setIsDarkMode((prevMode) => !prevMode);
+    const newTheme = !isDarkMode ? "dark" : "light";
+    setIsDarkMode(!isDarkMode);
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
+    <div className="flex items-center justify-end">
       <Switch
         checked={isDarkMode}
         onChange={toggleTheme}
         size="lg"
-        color="success"
         startContent={<SunIcon />}
         endContent={<MoonIcon />}
       >

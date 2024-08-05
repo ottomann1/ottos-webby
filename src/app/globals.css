@@ -3,28 +3,27 @@
 @tailwind utilities;
 
 
-:root {
-  --foreground-color: 0, 0, 0;
-  --background-start-color: 214, 219, 220;
-  --background-end-color: 255, 255, 255;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-[data-theme="dark"] {
-  --foreground-color: 255, 255, 255;
-  --background-start-color: 0, 0, 0;
-  --background-end-color: 50, 50, 50;
+#root,
+#__next {
+  height: 100%;
 }
 
 body {
-  color: rgb(var(--foreground-color));
-  background: linear-gradient(
-    to bottom,
-    rgb(var(--background-start-color)),
-    rgb(var(--background-end-color))
-  );
-  transition: background 0.3s, color 0.3s; /* Smooth transition */
-}/* @layer utilities { */
-/*   .text-balance { */
-/*     text-wrap: balance; */
-/*   } */
-/* } */
+  @apply transition-all ease-in-out duration-300;
+}
+
+[data-theme="light"] {
+  @apply bg-light-gradient; /* Apply light theme gradient */
+}
+
+[data-theme="dark"] {
+  @apply bg-dark-gradient; /* Apply dark theme gradient */
+}

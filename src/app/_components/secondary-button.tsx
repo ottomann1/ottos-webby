@@ -29,7 +29,7 @@ export function SecondaryButton() {
       isLoading={isLoading}
       onPress={handleClick} // Use onPress for Button events
       radius="full"
-      className="secondary"
+      color="secondary"
     >
       Secondary
     </Button>

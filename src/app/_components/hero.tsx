@@ -1,9 +1,12 @@
 import React from "react";
+import { DarkModeSwitch } from "./dark-mode-switch/dark-mode-switch";
 
 export function Hero() {
   return (
-    <section className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-16">
-      <div className="container mx-auto text-center px-4">
+    <div className="flex justify-center items-center">
+    <section className="max-w-3xl justify-center bg-white items-center flex text-black py-16">
+      <div className="mx-auto text-center px-4">
+        <DarkModeSwitch />
         <h1 className="text-4xl font-bold mb-4">Hello, Welcome to Otto's Website!</h1>
         <p className="text-lg">
           Here you can find everything about me, my projects, and my passion
@@ -11,5 +14,6 @@ export function Hero() {
         </p>
       </div>
     </section>
+    </div>
   );
 }
