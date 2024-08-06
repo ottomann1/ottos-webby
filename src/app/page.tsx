@@ -1,11 +1,11 @@
+import {Main, CtaButton} from './_components'
 
-import { CtaButton } from "./_components/cta-button";
 
 export default function Home() {
   const buttonprops = { buttonText: "Click me" };
   return (
-    <main className="max-w-5xl mx-auto flex flex-col items-center bg-white shadow-lg">
-      <div className="p-8 w-full">
+    <Main>
+      <div className="p-8 w-full bg-content-light dark:bg-content-dark text-text-light dark:text-text-dark rounded-lg">
         <h1 className="text-3xl font-bold mb-4">Here is the content of the page</h1>
         <p>
           This is the main content area. It is slightly wider than the hero
@@ -13,6 +13,6 @@ export default function Home() {
         </p>
         <CtaButton />
       </div>
-    </main>
+      </Main>
   );
 }

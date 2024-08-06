@@ -2,8 +2,8 @@
 import React from "react";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/navbar";
 import Link from "next/link";
-import { CtaButton } from "./cta-button"; // Assuming this is your custom button component
-import { Switch } from "@nextui-org/switch"; // Assuming you want a theme switch or similar
+import { CtaButton } from "./";
+import { Switch } from "@nextui-org/switch";
 import { Divider } from "@nextui-org/divider";
 import { usePathname } from "next/navigation";
 
@@ -35,23 +35,17 @@ export function MyNavbar() {
       <div className="max-w-5xl flex items-center space-x-4 mx-auto justify-start">
         <NavbarContent className="flex items-center space-x-4">
         <NavbarItem isActive={isActive("/")}>
-          <Link className="text-white hover:text-yellow-300" href="/">
+          <Link className="text-white hover:text-primary" href="/">
           Home
           </Link>
         </NavbarItem>
         <Divider orientation="vertical" className="h-6 bg-gray-600" />
           <NavbarItem isActive={isActive("/design-system")}>
-            <Link className="text-white hover:text-yellow-300" href="/design-system">
+            <Link className="text-white hover:text-primary" href="/design-system">
               Design System
             </Link>
           </NavbarItem>
           <Divider orientation="vertical" className="h-6 bg-gray-600" />
-        <NavbarContent justify="end" className="flex items-center gap-4">
-          <NavbarItem>
-            <CtaButton />
-          </NavbarItem>
-
-        </NavbarContent>
           </NavbarContent>
       </div>
     </Navbar>

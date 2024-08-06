@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 html,
 body {
   height: 100%;
@@ -20,10 +19,11 @@ body {
   @apply transition-all ease-in-out duration-300;
 }
 
+/* Apply theme-aware gradients */
 [data-theme="light"] {
-  @apply bg-light-gradient; /* Apply light theme gradient */
+  @apply bg-light-gradient;
 }
 
 [data-theme="dark"] {
-  @apply bg-dark-gradient; /* Apply dark theme gradient */
+  @apply bg-dark-gradient;
 }

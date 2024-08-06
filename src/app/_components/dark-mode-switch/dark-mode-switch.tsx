@@ -5,14 +5,11 @@ import { MoonIcon } from "./MoonIcon";
 import { SunIcon } from "./SunIcon";
 
 export function DarkModeSwitch() {
-  // State to manage theme
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // Update theme when isDarkMode changes
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
 
-    // Check localStorage for saved theme preference
     if (storedTheme) {
       setIsDarkMode(storedTheme === "dark");
       document.documentElement.setAttribute("data-theme", storedTheme);
@@ -21,7 +18,6 @@ export function DarkModeSwitch() {
     }
   }, []);
 
-  // Toggle theme function
   const toggleTheme = () => {
     const newTheme = !isDarkMode ? "dark" : "light";
     setIsDarkMode(!isDarkMode);
@@ -38,7 +34,6 @@ export function DarkModeSwitch() {
         startContent={<SunIcon />}
         endContent={<MoonIcon />}
       >
-        Dark mode
       </Switch>
     </div>
   );
