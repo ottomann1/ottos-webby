@@ -1,15 +1,75 @@
-import { Main, CtaButton } from "./_components";
+import { Main, CtaButton, Title } from "./_components";
 
 export default function Home() {
-  const buttonprops = { buttonText: "Click me" };
   return (
     <Main>
-<section id="about">
-    <h1>About Us</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel venenatis augue. Fusce sit amet sollicitudin libero. Vivamus et sapien sem. Nam vel risus at dolor vehicula fermentum nec ac ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel venenatis augue. Fusce sit amet sollicitudin libero. Vivamus et sapien sem. Nam vel risus at dolor vehicula fermentum nec ac ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel venenatis augue. Fusce sit amet sollicitudin libero. Vivamus et sapien sem. Nam vel risus at dolor vehicula fermentum nec ac ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel venenatis augue. Fusce sit amet sollicitudin libero. Vivamus et sapien sem. Nam vel risus at dolor vehicula fermentum nec ac ligula. </p>
-</section>
 
-        <CtaButton />
+      <div className="animate-pulse ps-20 text-xs tracking-tighter font-extrabold leading-none">
+      <pre>{
+         `
+  █████████                          █████   █████          ████  ████               █████
+ ███░░░░░███                        ░░███   ░░███          ░░███ ░░███              ░░███
+░███    ░░░   ██████   █████ ████    ░███    ░███   ██████  ░███  ░███   ██████     ███████    ██████
+░░█████████  ░░░░░███ ░░███ ░███     ░███████████  ███░░███ ░███  ░███  ███░░███   ░░░███░    ███░░███
+ ░░░░░░░░███  ███████  ░███ ░███     ░███░░░░░███ ░███████  ░███  ░███ ░███ ░███     ░███    ░███ ░███
+ ███    ░███ ███░░███  ░███ ░███     ░███    ░███ ░███░░░   ░███  ░███ ░███ ░███     ░███ ███░███ ░███
+░░█████████ ░░████████ ░░███████     █████   █████░░██████  █████ █████░░██████      ░░█████ ░░██████  ██ ██ ██
+ ░░░░░░░░░   ░░░░░░░░   ░░░░░███    ░░░░░   ░░░░░  ░░░░░░  ░░░░░ ░░░░░  ░░░░░░        ░░░░░   ░░░░░░  ░░ ░░ ░░
+                        ███ ░███
+                       ░░██████
+                        ░░░░░░                                                                                 `
+       }
+       </pre></div>
+<div className="text-center tracking-tighter animate-slowPulse font-extrabold leading-none">
+      <pre>
+        {`
+ ▒█████  ▄▄▄█████▓▄▄▄█████▓ ▒█████
+▒██▒  ██▒▓  ██▒ ▓▒▓  ██▒ ▓▒▒██▒  ██▒
+▒██░  ██▒▒ ▓██░ ▒░▒ ▓██░ ▒░▒██░  ██▒
+▒██   ██░░ ▓██▓ ░ ░ ▓██▓ ░ ▒██   ██░
+░ ████▓▒░  ▒██▒ ░   ▒██▒ ░ ░ ████▓▒░
+░ ▒░▒░▒░   ▒ ░░     ▒ ░░   ░ ▒░▒░▒░
+  ░ ▒ ▒░     ░        ░      ░ ▒ ▒░
+░ ░ ░ ▒    ░        ░      ░ ░ ░ ▒
+    ░ ░                        ░ ░
+
+ ▄▄▄▄    ▒█████    ██████   ██████  ███▄ ▄███▓ ▄▄▄       ███▄    █  ███▄    █
+▓█████▄ ▒██▒  ██▒▒██    ▒ ▒██    ▒ ▓██▒▀█▀ ██▒▒████▄     ██ ▀█   █  ██ ▀█   █
+▒██▒ ▄██▒██░  ██▒░ ▓██▄   ░ ▓██▄   ▓██    ▓██░▒██  ▀█▄  ▓██  ▀█ ██▒▓██  ▀█ ██▒
+▒██░█▀  ▒██   ██░  ▒   ██▒  ▒   ██▒▒██    ▒██ ░██▄▄▄▄██ ▓██▒  ▐▌██▒▓██▒  ▐▌██▒
+░▓█  ▀█▓░ ████▓▒░▒██████▒▒▒██████▒▒▒██▒   ░██▒ ▓█   ▓██▒▒██░   ▓██░▒██░   ▓██░
+░▒▓███▀▒░ ▒░▒░▒░ ▒ ▒▓▒ ▒ ░▒ ▒▓▒ ▒ ░░ ▒░   ░  ░ ▒▒   ▓▒█░░ ▒░   ▒ ▒ ░ ▒░   ▒ ▒
+▒░▒   ░   ░ ▒ ▒░ ░ ░▒  ░ ░░ ░▒  ░ ░░  ░      ░  ▒   ▒▒ ░░ ░░   ░ ▒░░ ░░   ░ ▒░
+ ░    ░ ░ ░ ░ ▒  ░  ░  ░  ░  ░  ░  ░      ░     ░   ▒      ░   ░ ░    ░   ░ ░
+ ░          ░ ░        ░        ░         ░         ░  ░         ░          ░
+      ░
+        `}</pre>
+      </div>
+      <pre className="ps-10 animate-shimmer tracking-tighter font-extrabold leading-none text-sm whitespace-pre-wrap font-mono p-8 text-[#E3EAFB] rounded-lg shadow-lg">
+        {`
+  ::::::::::: :::    ::: ::::::::::         :::::::::  :::::::::: :::::::: :::::::::::
+     :+:     :+:    :+: :+:                :+:    :+: :+:       :+:    :+:    :+:
+    +:+     +:+    +:+ +:+                +:+    +:+ +:+       +:+           +:+
+   +#+     +#++:++#++ +#++:++#           +#++:++#+  +#++:++#  +#++:++#++    +#+
+  +#+     +#+    +#+ +#+                +#+    +#+ +#+              +#+    +#+
+ #+#     #+#    #+# #+#                #+#    #+# #+#       #+#    #+#    #+#
+###     ###    ### ##########         #########  ########## ########     ###
+      :::::::::  :::::::::: :::     ::: :::::::::: :::        ::::::::  :::::::::  :::::::::: :::::::::
+     :+:    :+: :+:        :+:     :+: :+:        :+:       :+:    :+: :+:    :+: :+:        :+:    :+:
+    +:+    +:+ +:+        +:+     +:+ +:+        +:+       +:+    +:+ +:+    +:+ +:+        +:+    +:+
+   +#+    +:+ +#++:++#   +#+     +:+ +#++:++#   +#+       +#+    +:+ +#++:++#+  +#++:++#   +#++:++#:
+  +#+    +#+ +#+         +#+   +#+  +#+        +#+       +#+    +#+ +#+        +#+        +#+    +#+
+ #+#    #+# #+#          #+#+#+#   #+#        #+#       #+#    #+# #+#        #+#        #+#    #+#
+#########  ##########     ###     ########## ########## ########  ###        ########## ###    ###
+      :::::::::: :::     ::: :::::::::: :::::::::
+     :+:        :+:     :+: :+:        :+:    :+:
+    +:+        +:+     +:+ +:+        +:+    +:+
+   +#++:++#   +#+     +:+ +#++:++#   +#++:++#:
+  +#+         +#+   +#+  +#+        +#+    +#+
+ #+#          #+#+#+#   #+#        #+#    #+#
+##########     ###     ########## ###    ###
+          `}
+      </pre>
     </Main>
   );
 }

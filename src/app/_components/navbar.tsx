@@ -19,7 +19,7 @@ export function MyNavbar() {
   return (
     <Navbar
       maxWidth="full"
-      className="bg-gradient-to-b from-content to-foreground shadow-lg"
+      className="bg-content shadow-lg"
       classNames={{
         item: [
           "flex",

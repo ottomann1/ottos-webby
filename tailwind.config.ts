@@ -22,8 +22,23 @@ const config: Config = {
         secondary: "#7828C8",
         foreground: "#11181C",
         background: "#ffffff", // Set a base background color if needed
-        content: "#1C1B1A", // Content background color
+        content: "#191817", // Content background color
         text: "#F0F4FA", // Text color
+      },
+      animation: {
+        shimmer: "shimmer 3s infinite",
+        slowPulse: "slowPulse 5s infinite",
+      },
+      keyframes: {
+        shimmer: {
+          "0%": { opacity: 1 },
+          "50%": { opacity: 0.8 },
+          "100%": { opacity: 1 },
+        },
+        slowPulse: {
+          "0%, 100%": { transform: "scale(1)", opacity: 1 },
+          "50%": { transform: "scale(1.05)", opacity: 0.95 },
+        },
       },
     },
   },

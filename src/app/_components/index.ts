@@ -1,3 +1,4 @@
+export * from "./title";
 export * from "./navbar";
 export * from "./hero";
 export * from "./buttons";

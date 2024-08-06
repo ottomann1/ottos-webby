@@ -5,8 +5,10 @@ type Props = {
 export function Main({ children }: Props) {
   return (
     <main className="max-w-5xl mx-auto flex flex-col drop-shadow-2xl">
-      <div className="p-8 w-full bg-content text-text drop-shadow-2xl rounded">
-      {children}
+      <div className="p-5">
+        <div className="p-8 w-full bg-content text-text drop-shadow-2xl rounded">
+          {children}
+        </div>
       </div>
     </main>
   );
