@@ -2,7 +2,7 @@ import { nextui } from "@nextui-org/theme";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: "class", // Use 'class' strategy for dark mode
+  // Remove darkMode configuration if not using it
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -13,56 +13,33 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        "light-gradient": "linear-gradient(to bottom, #ffffff, #cccccc)",
-        "dark-gradient": "linear-gradient(to bottom, #000000, #555555)",
+        "whitey-gradient": "linear-gradient(to bottom, #ffffff, #cccccc)",
+        "custom-gradient":
+          "linear-gradient(to bottom, #F5A524, #7828C8, #86a8e7, #ffe4e1)",
       },
       colors: {
         primary: "#F5A524",
         secondary: "#7828C8",
         foreground: "#11181C",
-        background: {
-          light: "light-gradient",
-          dark: "dark-gradient",
-        },
-        content: {
-          light: "light-gradient", // Light mode content background
-          dark: "#dark-gradient", // Dark mode content background
-        },
-        text: {
-          light: "#11181C", // Light mode text color
-          dark: "#ECEDEE", // Dark mode text color
-        },
+        background: "#ffffff", // Set a base background color if needed
+        content: "#1C1B1A", // Content background color
+        text: "#F0F4FA", // Text color
       },
     },
   },
   plugins: [
     nextui({
-      prefix: "nextui", // prefix for themes variables
-      addCommonColors: true, // override common colors (e.g. "blue", "green", "pink").
-      defaultTheme: "light", // default theme from the themes object
-      defaultExtendTheme: "light", // default theme to extend on custom themes
-      layout: {}, // common layout tokens (applied to all themes)
+      prefix: "nextui",
+      addCommonColors: true,
+      defaultTheme: "light",
+      defaultExtendTheme: "light",
+      layout: {},
       themes: {
         light: {
-          layout: {}, // light theme layout tokens
+          layout: {},
           colors: {
-            background: "#ffffff", // Fallback for non-gradient support
-            foreground: "#11181C",
-            primary: {
-              foreground: "#ffffff",
-              DEFAULT: "#F5A524",
-            },
-            secondary: {
-              foreground: "#ffffff",
-              DEFAULT: "#7828C8",
-            },
-          },
-        },
-        dark: {
-          layout: {}, // dark theme layout tokens
-          colors: {
-            background: "#000000", // Fallback for non-gradient support
-            foreground: "#ECEDEE",
+            background: "#ffffff",
+            foreground: "#1C1B1A",
             primary: {
               foreground: "#ffffff",
               DEFAULT: "#F5A524",

@@ -1,6 +1,11 @@
-"use client"
+"use client";
 import React from "react";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/navbar";
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+} from "@nextui-org/navbar";
 import Link from "next/link";
 import { CtaButton } from "./";
 import { Switch } from "@nextui-org/switch";
@@ -14,7 +19,7 @@ export function MyNavbar() {
   return (
     <Navbar
       maxWidth="full"
-      className="bg-gradient-to-b from-zinc-800 to-zinc-900 shadow-lg"
+      className="bg-gradient-to-b from-content to-foreground shadow-lg"
       classNames={{
         item: [
           "flex",
@@ -34,19 +39,21 @@ export function MyNavbar() {
     >
       <div className="max-w-5xl flex items-center space-x-4 mx-auto justify-start">
         <NavbarContent className="flex items-center space-x-4">
-        <NavbarItem isActive={isActive("/")}>
-          <Link className="text-white hover:text-primary" href="/">
-          Home
-          </Link>
-        </NavbarItem>
-        <Divider orientation="vertical" className="h-6 bg-gray-600" />
+          <NavbarItem isActive={isActive("/")}>
+            <Link className="text-text hover:text-primary" href="/">
+              Home
+            </Link>
+          </NavbarItem>
+          <Divider orientation="vertical" className="h-6 bg-primary" />
           <NavbarItem isActive={isActive("/design-system")}>
-            <Link className="text-white hover:text-primary" href="/design-system">
+            <Link
+              className="text-white hover:text-primary"
+              href="/design-system"
+            >
               Design System
             </Link>
           </NavbarItem>
-          <Divider orientation="vertical" className="h-6 bg-gray-600" />
-          </NavbarContent>
+        </NavbarContent>
       </div>
     </Navbar>
   );

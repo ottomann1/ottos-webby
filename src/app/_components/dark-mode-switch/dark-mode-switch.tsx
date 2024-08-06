@@ -33,8 +33,7 @@ export function DarkModeSwitch() {
         size="lg"
         startContent={<SunIcon />}
         endContent={<MoonIcon />}
-      >
-      </Switch>
+      ></Switch>
     </div>
   );
 }

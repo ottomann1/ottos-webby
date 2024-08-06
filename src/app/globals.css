@@ -1,13 +1,16 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Set box-sizing and height for HTML and body */
 html,
 body {
   height: 100%;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  @apply bg-custom-gradient; /* Apply the custom gradient */
 }
 
 #root,
@@ -17,13 +20,4 @@ body {
 
 body {
   @apply transition-all ease-in-out duration-300;
-}
-
-/* Apply theme-aware gradients */
-[data-theme="light"] {
-  @apply bg-light-gradient;
-}
-
-[data-theme="dark"] {
-  @apply bg-dark-gradient;
 }
