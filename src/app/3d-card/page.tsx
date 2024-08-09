@@ -21,7 +21,9 @@ import { MeshLineGeometry, MeshLineMaterial } from "meshline";
 import { useControls } from "leva";
 import { Main2 } from "../_components";
 
+// Extend the fiber system with custom geometries and materials
 extend({ MeshLineGeometry, MeshLineMaterial });
+
 useGLTF.preload(
   "https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/5huRVDzcoDwnbgrKUo1Lzs/53b6dd7d6b4ffcdbd338fa60265949e1/tag.glb",
 );
@@ -84,8 +86,18 @@ export default function ThreeDeeCard() {
 }
 
 function Band({ maxSpeed = 50, minSpeed = 10 }) {
-  const band = useRef(), fixed = useRef(), j1 = useRef(), j2 = useRef(), j3 = useRef(), card = useRef() // prettier-ignore
-  const vec = new THREE.Vector3(), ang = new THREE.Vector3(), rot = new THREE.Vector3(), dir = new THREE.Vector3() // prettier-ignore
+  const band = useRef<THREE.Mesh>(null);
+  const fixed = useRef<RigidBody>(null);
+  const j1 = useRef<RigidBody>(null);
+  const j2 = useRef<RigidBody>(null);
+  const j3 = useRef<RigidBody>(null);
+  const card = useRef<RigidBody>(null);
+
+  const vec = new THREE.Vector3();
+  const ang = new THREE.Vector3();
+  const rot = new THREE.Vector3();
+  const dir = new THREE.Vector3();
+
   const segmentProps = {
     type: "dynamic",
     canSleep: true,
@@ -93,13 +105,17 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
     angularDamping: 2,
     linearDamping: 2,
   };
+
   const { nodes, materials } = useGLTF(
     "https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/5huRVDzcoDwnbgrKUo1Lzs/53b6dd7d6b4ffcdbd338fa60265949e1/tag.glb",
   );
+
   const texture = useTexture(
     "https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/SOT1hmCesOHxEYxL7vkoZ/c57b29c85912047c414311723320c16b/band.jpg",
   );
+
   const { width, height } = useThree((state) => state.size);
+
   const [curve] = useState(
     () =>
       new THREE.CatmullRomCurve3([
@@ -112,10 +128,11 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
   const [dragged, drag] = useState(false);
   const [hovered, hover] = useState(false);
 
-  useRopeJoint(fixed, j1, [[0, 0, 0], [0, 0, 0], 1]) // prettier-ignore
-  useRopeJoint(j1, j2, [[0, 0, 0], [0, 0, 0], 1]) // prettier-ignore
-  useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 1]) // prettier-ignore
-  useSphericalJoint(j3, card, [[0, 0, 0], [0, 1.45, 0]]) // prettier-ignore
+  // Using the joints with the correct refs
+  useRopeJoint(fixed, j1, [[0, 0, 0], [0, 0, 0], 1]);
+  useRopeJoint(j1, j2, [[0, 0, 0], [0, 0, 0], 1]);
+  useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 1]);
+  useSphericalJoint(j3, card, [[0, 0, 0], [0, 1.45, 0]]);
 
   useEffect(() => {
     if (hovered) {
@@ -152,16 +169,16 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
           delta * (minSpeed + clampedDistance * (maxSpeed - minSpeed)),
         );
       });
-      // Calculate catmul curve
+      // Calculate catmull curve
       curve.points[0].copy(j3.current.translation());
       curve.points[1].copy(j2.current.lerped);
       curve.points[2].copy(j1.current.lerped);
       curve.points[3].copy(fixed.current.translation());
-      band.current.geometry.setPoints(curve.getPoints(32));
+      band.current!.geometry.setPoints(curve.getPoints(32));
       // Tilt it back towards the screen
-      ang.copy(card.current.angvel());
-      rot.copy(card.current.rotation());
-      card.current.setAngvel({ x: ang.x, y: ang.y - rot.y * 0.25, z: ang.z });
+      ang.copy(card.current!.angvel());
+      rot.copy(card.current!.rotation());
+      card.current!.setAngvel({ x: ang.x, y: ang.y - rot.y * 0.25, z: ang.z });
     }
   });
 
@@ -201,7 +218,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
               drag(
                 new THREE.Vector3()
                   .copy(e.point)
-                  .sub(vec.copy(card.current.translation())),
+                  .sub(vec.copy(card.current!.translation())),
               )
             )}
           >
