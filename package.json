@@ -15,10 +15,16 @@
     "@nextui-org/switch": "^2.0.33",
     "@nextui-org/system": "^2.2.5",
     "@nextui-org/theme": "^2.2.9",
+    "@react-three/drei": "^9.109.5",
+    "@react-three/fiber": "^8.16.8",
+    "@react-three/rapier": "^1.4.0",
     "framer-motion": "^11.3.21",
+    "leva": "^0.9.35",
+    "meshline": "^3.3.1",
     "next": "14.2.5",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "three": "^0.167.1"
   },
   "devDependencies": {
     "@types/node": "^20",
