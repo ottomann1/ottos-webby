@@ -31,13 +31,13 @@ const config: Config = {
       },
       keyframes: {
         shimmer: {
-          "0%": { opacity: 1 },
-          "50%": { opacity: 0.8 },
-          "100%": { opacity: 1 },
+          "0%": { opacity: "100%" },
+          "50%": { opacity: "80%" },
+          "100%": { opacity: "100%" },
         },
         slowPulse: {
-          "0%, 100%": { transform: "scale(1)", opacity: 1 },
-          "50%": { transform: "scale(1.05)", opacity: 0.95 },
+          "0%, 100%": { transform: "scale(1)", opacity: "100%" },
+          "50%": { transform: "scale(1.05)", opacity: "95%" },
         },
       },
     },
