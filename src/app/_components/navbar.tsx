@@ -56,10 +56,7 @@ export function MyNavbar() {
           </NavbarItem>
           <Divider orientation="vertical" className="h-6 bg-primary" />
           <NavbarItem isActive={isActive("/3d-card")}>
-            <Link
-              className="text-white hover:text-primary"
-              href="/3d-card"
-            >
+            <Link className="text-white hover:text-primary" href="/3d-card">
               3D Card
             </Link>
           </NavbarItem>
